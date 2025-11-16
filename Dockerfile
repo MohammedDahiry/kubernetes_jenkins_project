@@ -1,6 +1,6 @@
-FROM centos:7
-MAINTAINER mohameddahiry117@gmail.com
-RUN yum install -y httpd zip unzip
+FROM rockylinux:8
+LABEL maintainer="mohameddahiry117@gmail.com"
+RUN dnf install -y httpd zip unzip
 RUN curl -L -o /tmp/photogenic.zip https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip
 WORKDIR /var/www/html/
 RUN unzip /tmp/photogenic.zip
