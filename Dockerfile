@@ -1,11 +1,11 @@
 FROM rockylinux:8
 LABEL maintainer="mohameddahiry117@gmail.com"
-RUN dnf install -y httpd zip unzip
+RUN dnf install -y httpd zip unzip wget ca-certificates
 RUN dnf install -y wget
-RUN wget -O /tmp/photogenic.zip http://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip
+RUN wget -O /tmp/template.zip https://templatemo.com/download/templatemo_602_graph_page
 WORKDIR /var/www/html/
-RUN unzip /tmp/photogenic.zip
-RUN cp -rvf photogenic/* .
-RUN rm -rf photogenic /tmp/photogenic.zip
+RUN unzip /tmp/template.zip
+RUN cp -rvf templatemo_602_graph_page/* .
+RUN rm -rf templatemo_602_graph_page /tmp/template.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
