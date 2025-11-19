@@ -8,4 +8,4 @@ RUN unzip /tmp/template.zip
 RUN cp -rvf templatemo_602_graph_page/* .
 RUN rm -rf templatemo_602_graph_page /tmp/template.zip
 CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
-EXPOSE 80
+EXPOSE 80 443
